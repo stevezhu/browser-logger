@@ -28,8 +28,12 @@ class Logger {
   }
 }
 
-function createLoggingMethod(options) {
-  const { level, name, styles, timestampFormat = 'datetime' } = options
+function createLoggingMethod({
+  level,
+  name,
+  styles,
+  timestampFormat = 'datetime',
+}) {
   const tag = consoleStyle([styles.timestamp, styles.level, styles.name])
 
   const timestamp = createTimestamp(timestampFormat)

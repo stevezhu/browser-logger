@@ -1,0 +1,20 @@
+{
+  "name": "browser-logger",
+  "description": "Package for logging in browsers with styling.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/stevezhu/browser-logger",
+  "author": "Steve Zhu <st.zhu1@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "@stzhu/console-style-tag": "1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "jest-extended": "^0.11.1"
+  }
+}

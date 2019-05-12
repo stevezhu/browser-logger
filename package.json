@@ -1,5 +1,5 @@
 {
-  "name": "browser-logger",
+  "name": "@stzhu/browser-logger",
   "description": "Package for logging in browsers with styling.",
   "version": "1.0.0",
   "main": "index.js",

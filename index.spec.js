@@ -1,5 +1,5 @@
 require('jest-extended')
-const { Logger } = require('browser-logger')
+const { Logger } = require('./index')
 
 describe('logger', () => {
   it('should create a method for each logging level', () => {

@@ -7,6 +7,6 @@ cache: yarn
 before_install: yarn add -D coveralls
 jobs:
   include:
-    - stage: Produce Coverage
+    - stage: Coverage
       node_js: node
       script: yarn jest --coverage --coverageReporters=text-lcov | yarn coveralls

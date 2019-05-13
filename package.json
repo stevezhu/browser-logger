@@ -1,7 +1,7 @@
 {
   "name": "@stzhu/browser-logger",
   "description": "Package for logging in browsers with styling.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.js",
   "repository": "https://github.com/stevezhu/browser-logger",
   "author": "Steve Zhu <st.zhu1@gmail.com>",

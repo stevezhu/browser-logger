@@ -16,6 +16,7 @@ class Logger {
   constructor(name, { timestampFormat = 'datetime' } = {}) {
     for (const level of LEVELS) {
       this[level] = createLoggingMethod({
+        timestamp: createTimestamp(timestampFormat),
         level,
         name,
         styles: {
@@ -23,16 +24,13 @@ class Logger {
           level: STYLES.LEVELS[level],
           name: STYLES.NAME,
         },
-        timestampFormat,
       })
     }
   }
 }
 
-function createLoggingMethod({ level, name, styles, timestampFormat }) {
+function createLoggingMethod({ timestamp, level, name, styles }) {
   const tag = consoleStyle([styles.timestamp, styles.level, styles.name])
-
-  const timestamp = createTimestamp(timestampFormat)
 
   const metadata = name
     ? tag`[${timestamp}][${level}][${name}]`

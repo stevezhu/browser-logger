@@ -1,7 +1,7 @@
 require('jest-extended')
 const { Logger } = require('./index')
 
-describe('logger', () => {
+describe('Logger', () => {
   it('should create a method for each logging level', () => {
     const logger = new Logger()
     expect(logger).toContainAllKeys(['debug', 'info', 'warn', 'error'])

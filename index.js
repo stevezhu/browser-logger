@@ -1,4 +1,4 @@
-const consoleStyle = require('@stzhu/console-style-tag')
+import consoleStyle from '@stzhu/console-style-tag'
 
 const LEVELS = ['debug', 'info', 'warn', 'error']
 const STYLES = {
@@ -10,23 +10,6 @@ const STYLES = {
     error: 'text-transform: uppercase;',
   },
   NAME: 'font-weight: bold',
-}
-
-class Logger {
-  constructor(name, { timestampFormat = 'datetime' } = {}) {
-    for (const level of LEVELS) {
-      this[level] = createLoggingMethod({
-        timestamp: createTimestamp(timestampFormat),
-        level,
-        name,
-        styles: {
-          timestamp: STYLES.TIMESTAMP,
-          level: STYLES.LEVELS[level],
-          name: STYLES.NAME,
-        },
-      })
-    }
-  }
 }
 
 function createLoggingMethod({ timestamp, level, name, styles }) {
@@ -59,5 +42,21 @@ function createTimestamp(format) {
   return timestamp
 }
 
-module.exports = new Logger()
-module.exports.Logger = Logger
+export class Logger {
+  constructor(name, { timestampFormat = 'datetime' } = {}) {
+    for (const level of LEVELS) {
+      this[level] = createLoggingMethod({
+        timestamp: createTimestamp(timestampFormat),
+        level,
+        name,
+        styles: {
+          timestamp: STYLES.TIMESTAMP,
+          level: STYLES.LEVELS[level],
+          name: STYLES.NAME,
+        },
+      })
+    }
+  }
+}
+
+export default new Logger()

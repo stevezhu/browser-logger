@@ -14,6 +14,9 @@
     "@stzhu/console-style-tag": "^1.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-jest": "^24.9.0",
     "jest": "^24.8.0",
     "jest-extended": "^0.11.1"
   }
